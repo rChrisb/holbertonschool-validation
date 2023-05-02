@@ -1,4 +1,4 @@
-set -e
+
 
 docker run -it ubuntu:18.04
 
