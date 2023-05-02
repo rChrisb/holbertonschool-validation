@@ -9,6 +9,6 @@ git clone https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
 
 
 make build
-# echo "yo" >> dist/index.html
+echo "yo" >> dist/index.html
 
 exit 0
