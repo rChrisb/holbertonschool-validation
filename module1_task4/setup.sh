@@ -11,7 +11,7 @@ git clone https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
 make build
 rm -rf dist
 mkdir -p dist
-cp -R public/ dist/
+cp -R public/* dist/
 # mv public/ dist/
 
 exit 0
