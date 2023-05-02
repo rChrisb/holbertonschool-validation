@@ -1,7 +1,9 @@
 docker run -it ubuntu:18.04
 
-if ! command -v hugo > /dev/null 2>&1 || ! command -v make > /dev/null 2>&1; then
-	apt-get update && apt-get install -y hugo make
-fi
+apt-get update && apt-get install -y hugo make
+
+wget https://github.com/gohugoio/hugo/releases/download/v0.84.0/hugo_extended_0.84.0_Linux-64bit.tar.gz
+tar -xf hugo_extended_0.84.0_Linux-64bit.tar.gz
+mv hugo /usr/local/bin/hugo
 
 make build
