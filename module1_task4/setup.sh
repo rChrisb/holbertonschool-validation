@@ -1,16 +1,7 @@
+#!/bin/bash
 
-if ! command -v hugo >/dev/null 2>&1 || ! command -v make >/dev/null 2>&1; then
-  apt-get update && apt-get install -y hugo make || exit 1
-fi
+apt-get update && apt-get install -y hugo make wget
 
-if [[ ! -d ./dist ]]; then
-  mkdir ./dist || exit 1
-fi
+wget https://github.com/gohugoio/hugo/releases/download/v0.109.0/hugo_extended_0.109.0_linux-amd64.deb	
 
-cd ./site || exit 1
-
-make build || exit 1
-
-mv ./public/* ../dist/ || exit 1
-
-exit 0
+make build
