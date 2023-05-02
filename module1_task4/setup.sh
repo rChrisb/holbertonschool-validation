@@ -6,6 +6,6 @@ hugo version
 apt-get update && apt-get install -y hugo make
 
 make build
-touch dist/index.html
+# mv public/ dist/
 
 exit 0
