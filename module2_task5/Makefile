@@ -23,6 +23,7 @@ post:  ## Add a new page to your site with a specific title
 test: ## Tests for browser responses
 	make unit-tests
 	make integration-tests
+	make validate
 
 
 unit-tests: ## Unitests
@@ -36,6 +37,7 @@ check: ## Check lint of markdonws source files and analysis of the links
 	markdown-link-check README.md content/posts/welcome.md
 validate: ## validate the html file in dist/
 	python3 w3c_validator.py dist/index.html
+	go test -race -coverprofile=coverage.txt -covermode=atomic ./... -short=false -timeout=5m -run "Integration" -count=1
 
 help: ## Prints out the list of targets and their usage
 	@grep "##" Makefile | grep -v grep | sed "s/##//"

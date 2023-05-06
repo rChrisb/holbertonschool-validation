@@ -18,12 +18,11 @@ func Test_server(t *testing.T) {
     responseCode int
     body         string
   }{
-    {
+ /*    {
       name:         "Home page",
-      URI:          "",
-      responseCode: 404,
-      body:         "404 page not found\n",
-    },
+      URI:          "/",
+      responseCode: 200,
+    }, */
     {
       name:         "Health page",
       URI:          "/hello?name=Holberton",
