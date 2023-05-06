@@ -12,7 +12,7 @@ run: ## Run the application in background, and write logs into a file named awes
 stop: ##  Stop the application
 	pkill awesome-api
 clean:  ## empties the dist directory
-	rm -rf dist/*
+	rm -rf dist/
 	pkill awesome-api || true
 	rm -rf awesome-api awesome-api.log coverage-integrations.out coverage-units.out
 
