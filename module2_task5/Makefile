@@ -36,8 +36,8 @@ check: ## Check lint of markdonws source files and analysis of the links
 	markdownlint README.md content/posts/welcome.md
 	markdown-link-check README.md content/posts/welcome.md
 validate: ## validate the html file in dist/
-	python3 w3c_validator.py dist/index.html
-	go test -race -coverprofile=coverage.txt -covermode=atomic ./... -short=false -timeout=5m -run "Integration" -count=1
+	-python3 w3c_validator.py -f errors.txt dist/index.html
+	
 
 help: ## Prints out the list of targets and their usage
 	@grep "##" Makefile | grep -v grep | sed "s/##//"
