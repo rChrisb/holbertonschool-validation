@@ -1,30 +1,12 @@
-lint: ## Does the linting
-	golangci-lint run
+build:  ## publish the site
+	hugo
 
-build: lint ## compile the source code of the application to a binary named awesome-api
-	go build
+clean:  ## empties the dist directory
+	rm -rf dist/*
 
-run: ## Run the application in background, and write logs into a file named awesome-api.log
+post:  ## Add a new page to your site with a specific title
+	hugo new posts/$(POST_NAME).md
+	sed -i "s/title: .*/title: \"$(POST_TITLE)\"/" content/posts/$(POST_NAME).md
 
-	./awesome-api >./awesome-api.log 2>&1 &
-
-stop: ##  Stop the application
-	pkill awesome-api
-
-clean: ## Stop the application. Delete the binary awesome-api and the log file awesome-api.log
-	pkill awesome-api || true
-	rm -rf awesome-api awesome-api.log coverage-integrations.out coverage-units.out
-
-test: ## Tests for browser responses
-	make unit-tests
-	make integration-tests
-
-
-unit-tests: ## Unitests
-	@go test -v -short -coverprofile=coverage-units.out
-
-integration-tests: ##Integration tests
-	go test -v -tags=integration -coverprofile=coverage-integrations.out
-
-help: ## Targets purpose
-	@grep "#" Makefile | grep -v grep | sed "s/#//"
+help: ## Prints out the list of targets and their usage
+	@grep "##" Makefile | grep -v grep | sed "s/##//"
