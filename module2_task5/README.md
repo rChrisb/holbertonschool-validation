@@ -2,6 +2,7 @@
 
 ## Lifecycle
 
+lint
 build
 run
 stop
