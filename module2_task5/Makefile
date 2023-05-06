@@ -34,6 +34,8 @@ integration-tests: ## Integration tests
 check: ## Check lint of markdonws source files and analysis of the links
 	markdownlint README.md content/posts/welcome.md
 	markdown-link-check README.md content/posts/welcome.md
+validate: ## validate the html file in dist/
+	python3 w3c_validator.py dist/index.html
 
 help: ## Prints out the list of targets and their usage
 	@grep "##" Makefile | grep -v grep | sed "s/##//"

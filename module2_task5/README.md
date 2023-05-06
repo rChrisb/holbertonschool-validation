@@ -7,6 +7,7 @@ run
 stop
 test
 check
+validate
 clean
 post
 help
