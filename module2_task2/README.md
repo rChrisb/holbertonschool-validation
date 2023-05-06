@@ -11,6 +11,7 @@ build
 run
 stop
 test
+unit-tests
 clean
 
 help
