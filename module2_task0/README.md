@@ -2,7 +2,7 @@
 
 install go v1.15.15
 
-# Lifecylce
+# Lifecycle
 
 build
 run
