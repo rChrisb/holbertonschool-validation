@@ -14,7 +14,6 @@ check: ## Check lint of markdonws source files and analysis of the links
 
 validate: ## validate the html file in dist/
 	hugo
-	echo "here we go again" > dist/index.hml
-	exit 0
+	python3 w3c_validator.py -st dist/index.html || true
 help: ## Prints out the list of targets and their usage
 	@grep "##" Makefile | grep -v grep | sed "s/##//"
