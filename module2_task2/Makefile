@@ -20,7 +20,7 @@ test: ## Test for browser responses
 	curl http://localhost:9999/health
 
 unit-tests: ## Unitests
-	go test -v -short -o coverage-units.out
+	go test -v -short -coverprofile=coverage-units.out
 
 help: ## Targets purpose
 	@grep "#" Makefile | grep -v grep | sed "s/#//"
