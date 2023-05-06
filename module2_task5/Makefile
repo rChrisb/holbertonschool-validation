@@ -31,5 +31,9 @@ unit-tests: ## Unitests
 integration-tests: ## Integration tests
 	go test -v -tags=integration -coverprofile=coverage-integrations.out
 
+check: ## Check lint of markdonws source files and analysis of the links
+	markdownlint README.md content/posts/welcome.md
+	markdown-link-check README.md content/posts/welcome.md
+
 help: ## Prints out the list of targets and their usage
 	@grep "##" Makefile | grep -v grep | sed "s/##//"
