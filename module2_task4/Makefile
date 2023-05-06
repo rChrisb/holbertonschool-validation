@@ -13,6 +13,7 @@ check: ## Check lint of markdonws source files and analysis of the links
 	markdown-link-check README.md content/posts/welcome.md
 
 validate: ## validate the html file in dist/
+	hugo
 	echo '<!DOCTYPE html> \
 	<HTML lang="en"> \
 	<HEAD> \
