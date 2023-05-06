@@ -6,6 +6,7 @@ install go v1.15.15
 
 Makefile targets:
 
+lint
 build
 run
 stop
