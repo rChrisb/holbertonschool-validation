@@ -31,6 +31,44 @@ func Test_server(t *testing.T) {
       body:         "Hello Holberton!",
     },
   }
+    reqNoName, _ := http.NewRequest("GET", "/hello", nil)
+    reqChris, _ := http.NewRequest("GET", "/hello?name=Chris", nil)
+    reqEmptyName, _ := http.NewRequest("GET", "/hello?name=", nil)
+
+    response := httptest.NewRecorder()
+    HelloHandler(response, reqNoName)
+    if response.Body.String() != "Hello there!" {
+        t.Errorf("unexpected body: got %v want %v", response.Body.String(), "Hello there!")
+    }
+
+    response = httptest.NewRecorder()
+    HelloHandler(response, reqChris)
+    if response.Body.String() != "Hello Chris!" {
+        t.Errorf("unexpected body: got %v want %v", response.Body.String(), "Hello Chris!")
+    }
+
+    response = httptest.NewRecorder()
+    HelloHandler(response, reqEmptyName)
+    if status := response.Code; status != http.StatusBadRequest {
+        t.Errorf("wrong status code: got %v want %v", status, 400)
+    }
+
+
+
+  ts := httptest.NewServer(http.HandlerFunc(HealthCheckHandler))
+    defer ts.Close()
+
+    res, err := http.Get(ts.URL)
+
+    body, err := ioutil.ReadAll(res.Body)
+    res.Body.Close()
+    if err != nil {
+        t.Fatal(err)
+    }
+
+    if string(body) != "ALIVE" {
+        t.Errorf("expected body: 'ALIVE'; response body: %q", string(body))
+    }
 
   for _, tt := range tests {
     t.Run(tt.name, func(t *testing.T) {
