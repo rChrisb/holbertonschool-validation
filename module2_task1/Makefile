@@ -12,7 +12,7 @@ stop: ##  Stop the application
 	pkill awesome-api
 
 clean: ## Stop the application. Delete the binary awesome-api and the log file awesome-api.log
-	pkill awesome-api || true
+	pkill awesome-api ;
 	rm -rf awesome-api awesome-api.log
 
 test: ## Test for browser responses
