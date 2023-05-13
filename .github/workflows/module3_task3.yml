@@ -30,7 +30,7 @@ jobs:
           files: |
             module3_task3/awesome-website.zip
             module3_task3/DEPLOY.md
-          token: ${{ secrets.PAT_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
   buildonotherversion:
     runs-on: ubuntu-18.04
     if: github.event_name == 'push' && github.ref_type == 'tag'
