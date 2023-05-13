@@ -48,7 +48,7 @@ jobs:
         with:
           name: build package
           path: module3_task3/awesome-website.zip
-      - name: Release
+      - name: 1.0.0
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
