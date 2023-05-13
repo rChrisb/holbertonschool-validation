@@ -7,10 +7,7 @@ on:
 
 jobs:
   build:
-    strategy:
-      matrix:
-        os: [ubuntu-22.04, ubuntu-18.04]
-    runs-on: ${{matrix.os}}
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Clone the repository
@@ -34,3 +31,6 @@ jobs:
           files: |
             module3_task3/awesome-website.zip
             module3_task3/DEPLOY.md
+    build-18.04:
+      runs-on: ubuntu-18.04
+      if: github.event_name == 'push' && github.ref_type == 'tag'
