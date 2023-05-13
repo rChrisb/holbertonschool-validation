@@ -31,6 +31,9 @@ jobs:
           files: |
             module3_task3/awesome-website.zip
             module3_task3/DEPLOY.md
+      - name: Get Upload URL
+        id: upload_url
+        run: echo "::set-output name=upload_url::${{ github.event.release.upload_url }}"
       - name: Upload Release Asset
         uses: actions/upload-release-asset@v1
         with:
