@@ -23,7 +23,7 @@ jobs:
       - name: Upload
         uses: actions/upload-artifact@v3
         with:
-          name: build package
+          name: building package
           path: module3_task3/awesome-website.zip
       - name: Release
         uses: softprops/action-gh-release@v1
