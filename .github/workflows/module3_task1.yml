@@ -15,6 +15,6 @@ jobs:
       - name: Clone the repository
         uses: actions/checkout@v3
       - name: Run the script
-        uses: cd module3_task1 && ./setup.sh
+        run: cd module3_task1 && ./setup.sh
       - name: Makefile build
         run: cd module3_task1 && make build
