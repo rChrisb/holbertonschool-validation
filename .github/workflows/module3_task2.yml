@@ -18,6 +18,10 @@ jobs:
         run: npm install -g markdownlint-cli
       - name: Linting
         run: cd module3_task2 && make lint
+      - name: Tests
+        run: |
+          cd module3_task2
+          make test
       - name: Makefile build
         run: cd module3_task2 && make build
       - name: Archive
