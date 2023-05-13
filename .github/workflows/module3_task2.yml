@@ -15,7 +15,7 @@ jobs:
       - name: Run the script
         run: cd module3_task2 && ./setup.sh
       - name: Linting
-        run: make lint
+        run: cd module3_task2 && make lint
       - name: Makefile build
         run: cd module3_task2 && make build
       - name: Archive
