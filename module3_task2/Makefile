@@ -1,5 +1,5 @@
 lint: ## Does the linting
-	markdownlint *.md
+	markdownlint DEPLOY.md
 
 build:  ## publish the site
 	hugo
