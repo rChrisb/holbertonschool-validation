@@ -2,6 +2,8 @@ name: module3_task3
 
 on:
   push:
+  tags:
+    - "1.0.0"
   schedule:
     - cron: "0 0 * * *"
 
@@ -31,7 +33,6 @@ jobs:
           files: |
             module3_task3/awesome-website.zip
             module3_task3/DEPLOY.md
-          token: ${{ secrets.GITHUB_TOKEN }}
   buildonotherversion:
     runs-on: ubuntu-18.04
     if: github.event_name == 'push' && github.ref_type == 'tag'
