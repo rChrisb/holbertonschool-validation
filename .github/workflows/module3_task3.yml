@@ -2,8 +2,8 @@ name: module3_task3
 
 on:
   push:
-  tags:
-    - "1.0.0"
+    tags:
+      - "1.0.0"
   schedule:
     - cron: "0 0 * * *"
 
