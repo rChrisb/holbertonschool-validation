@@ -1,0 +1,13 @@
+name: release_drafter
+
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+  steps:
+    - uses: release-drafter/release-drafter@v5
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
