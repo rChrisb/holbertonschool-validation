@@ -1,14 +1,15 @@
 name: release_drafter
 
 on:
+  push:
   pull_request:
     branches:
       - main
 jobs:
   build:
     runs-on: ubuntu-22.04
-  steps:
-    - name: Realease Drafter
-      uses: release-drafter/release-drafter@v5
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Release Drafter
+        uses: release-drafter/release-drafter@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
