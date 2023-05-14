@@ -1,0 +1,16 @@
+name-template: "v$NEXT_PATCH"
+tag-template: "v$NEXT_PATCH"
+categories:
+  - title: "Bug Fixes"
+    labels:
+      - "bug"
+  - title: "Features"
+    labels:
+      - "feature"
+  - title: "Documentation"
+    labels:
+      - "documentation"
+template: |
+  ## Changelog
+
+  $CHANGES
