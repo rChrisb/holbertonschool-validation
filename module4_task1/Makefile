@@ -42,5 +42,9 @@ validate: ## validate the html file in dist/
 package: ## produces awesome-website.zip, containing awesome-api and the directory dist/
 	make build
 	zip awesome-website.zip dist/ awesome-api
+
+build-docker:
+    docker build -t awesome:build -f .build/Dockerfile .
+
 help: ## Prints out the list of targets and their usage
 	@grep "##" Makefile | grep -v grep | sed "s/##//"
