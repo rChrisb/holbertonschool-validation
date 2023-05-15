@@ -2,7 +2,9 @@ lint: ## Does the linting
 	markdownlint DEPLOY.md
 
 build:  ## publish the site
-	go build
+	docker run --rm --volume=$(shell pwd):/app --workdir=/app awesome:build hugo
+	docker run --rm --volume=$(shell pwd):/app --workdir=/app awesome:build /bin/bash -c "go mod init github.com/rChrisb/awesome-api && go get github.com/gorilla/mux && go build"
+
 
 run: ## Run the application in background, and write logs into a file named awesome-api.log
 
@@ -42,7 +44,7 @@ package: ## produces awesome-website.zip, containing awesome-api and the directo
 	zip awesome-website.zip dist/ awesome-api
 
 build-docker:
-    docker image build -t "awesome:build" -f .build/Dockerfile .
+    docker build -t awesome:build ./.build
 
 help: ## Prints out the list of targets and their usage
 	@grep "##" Makefile | grep -v grep | sed "s/##//"
