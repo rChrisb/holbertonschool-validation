@@ -23,8 +23,8 @@ jobs:
         run: cd module4_task1 && make test
       - name: Makefile build
         run: cd module4_task1 && make build
-      - name: Archive
-        run: cd module4_task1 && make package
+      - name: docker
+        run: make build-docker
       - name: Upload
         uses: actions/upload-artifact@v3
         with:
