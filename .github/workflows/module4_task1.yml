@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v3
       - name: Run the script
         run: |
-          docker run --privileged -v $PWD:/app -w /app ubuntu:18.04 bash -c "cd module4_task1 && chmod +x setup.sh && ./setup.sh"
+          docker run --privileged -v $PWD:/app -w /app ubuntu:22.04 bash -c "cd module4_task1 && chmod +x setup.sh && ./setup.sh"
 
       - name: Markdownlint setup
         run: npm install -g markdownlint-cli
