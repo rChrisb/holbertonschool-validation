@@ -42,8 +42,8 @@ package: ## produces awesome-website.zip, containing awesome-api and the directo
 	make build
 	zip awesome-website.zip dist/ awesome-api
 
-# build-docker:
-#     docker image build -t "awesome:build" -f .build/Dockerfile .
+build-docker:
+    docker image build -t "awesome:build" -f .build/Dockerfile .
 
 help: ## Prints out the list of targets and their usage
 	@grep "##" Makefile | grep -v grep | sed "s/##//"

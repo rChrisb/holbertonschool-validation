@@ -14,7 +14,9 @@ jobs:
       - name: Clone the repository
         uses: actions/checkout@v3
       - name: Run the script
-        run: cd module4_task1 && chmod +x setup.sh && ./setup.sh
+        run: |
+          docker run --privileged -v $PWD:/app -w /app ubuntu:18.04 bash -c "cd module4_task1 && chmod +x setup.sh && ./setup.sh"
+
       - name: Markdownlint setup
         run: npm install -g markdownlint-cli
       - name: Linting
