@@ -3,6 +3,7 @@ lint: ## Does the linting
 
 build:  ## publish the site
 	hugo
+	go build
 	
 
 run: ## Run the application in background, and write logs into a file named awesome-api.log
