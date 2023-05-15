@@ -2,8 +2,8 @@ lint: ## Does the linting
 	markdownlint DEPLOY.md
 
 build:  ## publish the site
-	docker run --rm --volume=$(shell pwd):/app --workdir=/app awesome:build hugo
-	docker run --rm --volume=$(shell pwd):/app --workdir=/app awesome:build /bin/bash -c "go mod init github.com/rChrisb/awesome-api && go get github.com/gorilla/mux && go build"
+	docker run --rm --volume=$(shell pwd):/app --workdir=/app awesome:.build hugo
+	docker run --rm --volume=$(shell pwd):/app --workdir=/app awesome:.build /bin/bash -c "go mod init github.com/rChrisb/awesome-api && go get github.com/gorilla/mux && go build"
 
 
 run: ## Run the application in background, and write logs into a file named awesome-api.log
