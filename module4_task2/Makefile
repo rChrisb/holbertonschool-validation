@@ -1,5 +1,5 @@
 lint: ## Does the linting
-	docker run --rm -i hadolint/hadolint < Dockerfile
+	docker run --rm -i hadolint/hadolint < .build/Dockerfile
 
 build:  ## publish the site
 	hugo
