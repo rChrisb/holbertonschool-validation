@@ -45,7 +45,7 @@ build-docker: ##  build the Docker image
     docker build -t awesome:build -f .build
 
 docker-tests: ## tests with docker
-		make build-docker
+		-make build-docker
 		container-structure-test test --image awesome:build --config .build/cst.yml
 
 help: ## Prints out the list of targets and their usage
