@@ -3,7 +3,8 @@ lint: ## Does the linting
 	docker run --rm -i hadolint/hadolint < .build/Dockerfile
 
 build:  ## publish the site
-	hugo
+	-docker run --rm --volume=$(shell pwd):/app --workdir=/app awesome:build /bin/bash -c "go mod init github.com/rChrisb/awesome-api && go get github.com/gorilla/mux && go build"
+	docker run --rm --volume=$(shell pwd):/app --workdir=/app awesome:build hugo
 
 run: ## Run the application in background, and write logs into a file named awesome-api.log
 
@@ -27,10 +28,10 @@ test: ## Tests for browser responses
 
 
 unit-tests: ## Unitests
-	@go test -v -short -coverprofile=coverage-units.out
+	docker run --rm --volume=$(shell pwd):/app --workdir=/app awesome:build go test -v -short -coverprofile=coverage-units.out
 
 integration-tests: ## Integration tests
-	go test -v -tags=integration -coverprofile=coverage-integrations.out
+	docker run --rm --volume=$(shell pwd):/app --workdir=/app awesome:build go test -v -coverprofile=coverage-integrations.out
 
 check: ## Check lint of markdonws source files and analysis of the links
 	markdownlint README.md content/posts/welcome.md
