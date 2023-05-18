@@ -1,4 +1,4 @@
-# FROM golang:1.15.8-buster
+FROM golang:1.15.8-buster
 # RUN apt-get update && apt-get install --no-install-recommends -y make=4.2.1 wget=1.20.3 curl=7.68.0 &&\
 # 	apt-get clean &&\
 # 	&& rm -rf /var/lib/apt/lists/* &&\
