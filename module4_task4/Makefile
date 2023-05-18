@@ -43,8 +43,8 @@ package: ## produces awesome-website.zip, containing awesome-api and the directo
 	make build
 	zip awesome-website.zip dist/ awesome-api
 
-build-docker: ##  build the Docker image
-    docker build -t awesome:build -f .build
+# build-docker: ##  build the Docker image
+#     docker build -t awesome:build -f .build
 
 docker-tests: ## tests with docker
 		-make build-docker
