@@ -1,0 +1,5 @@
+commandTests:
+  - name: "hugo command exists"
+    command: "which"
+    args: ["hugo"]
+    expectedOutput: ["/usr/local/bin/hugo"]

@@ -1,5 +1,5 @@
 lint: ## Does the linting
-	markdownlint DEPLOY.md
+	docker run --rm -i hadolint/hadolint < Dockerfile
 
 build:  ## publish the site
 	hugo
@@ -42,7 +42,11 @@ package: ## produces awesome-website.zip, containing awesome-api and the directo
 	zip awesome-website.zip dist/ awesome-api
 
 build-docker: ##  build the Docker image
-    docker build -t awesome:build -f .build/Dockerfile .
+    docker build -t awesome:build -f .build
+
+docker-tests: ## tests with docker
+		make build-docker
+		container-structure-test test --image awesome:build --config .build/cst.yml
 
 help: ## Prints out the list of targets and their usage
 	@grep "##" Makefile | grep -v grep | sed "s/##//"

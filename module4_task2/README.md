@@ -8,6 +8,7 @@ build-docker
 run
 stop
 test
+docker-tests
 unit-tests
 integration-tests
 check
