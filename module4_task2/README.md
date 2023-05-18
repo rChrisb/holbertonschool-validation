@@ -4,6 +4,7 @@
 
 lint
 build
+build-docker
 run
 stop
 test
