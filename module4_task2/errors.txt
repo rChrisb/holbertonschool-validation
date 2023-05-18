@@ -1,0 +1,6 @@
+Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.
+The “navigation” role is unnecessary for element “nav”.
+The “main” role is unnecessary for element “main”.
+Article lacks heading. Consider using “h2”-“h6” elements to add identifying headings to all articles.
+Section lacks heading. Consider using “h2”-“h6” elements to add identifying headings to all sections, or else use a “div” element instead for any cases where no heading is needed.
+The “contentinfo” role is unnecessary for element “footer”.
