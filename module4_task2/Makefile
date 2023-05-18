@@ -1,8 +1,8 @@
 lint: ## Does the linting
 	markdownlint DEPLOY.md
 
-# build:  ## publish the site
-# 	ls
+build:  ## publish the site
+	hugo
 
 run: ## Run the application in background, and write logs into a file named awesome-api.log
 
