@@ -1,4 +1,5 @@
 lint: ## Does the linting
+	-make build-docker
 	docker run --rm -i hadolint/hadolint < .build/Dockerfile
 
 build:  ## publish the site
