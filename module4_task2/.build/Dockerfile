@@ -1,7 +1,7 @@
 FROM golang:1.15.8-buster
 RUN apt-get update && apt-get install --no-install-recommends -y make=4.2.1 wget=1.20.3 curl=7.68.0 &&\
 	apt-get clean &&\
-	 && rm -rf /var/lib/apt/lists/
+	&& rm -rf /var/lib/apt/lists/* &&\
 	wget -nv https://github.com/gohugoio/hugo/releases/download/v0.84.0/hugo_extended_0.84.0_linux-amd64.deb &&\
 	dpkg -i hugo_extended_0.84.0_linux-amd64.deb &&\
 	rm -f hugo_extended_0.84.0_linux-amd64.deb &&\
