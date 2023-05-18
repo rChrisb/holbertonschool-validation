@@ -1,3 +1,4 @@
+---
 commandTests:
   - name: "hugo command exists"
     command: "which"
