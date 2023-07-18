@@ -3,8 +3,7 @@ name: module4_task1
 on:
   push:
   pull_request:
-  schedule:
-    - cron: "0 0 * * *"
+
 
 jobs:
   build:
